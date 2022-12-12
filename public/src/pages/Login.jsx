@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { Link, useNavigate } from "react-router-dom";
-import Logo from "../assets/logo.svg";
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios"
@@ -67,10 +66,10 @@ const Login = () => {
     <>
       <FormContainer>
         <form onSubmit={(e) => handleSubmit(e)}>
-          <div className="brand">
+          {/* <div className="brand">
             <img src={Logo} alt="Logo" />
             <h1>RChat</h1>
-          </div>
+          </div> */}
           <input type="text" placeholder='Username' name='username' onChange={(e) => handleChange(e)} min="3"/>
           <input type="password" placeholder='Password' name='password' onChange={(e) => handleChange(e)} />
           <button type='submit' >Login</button>
@@ -91,7 +90,7 @@ const FormContainer = styled.div`
   justify-content: center;
   gap: 1rem;
   align-items: center;
-  background-color: #131324;
+  background-color: #252a34;
   .brand {
     display: flex;
     align-items: center;
@@ -109,14 +108,13 @@ const FormContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    background-color: #00000076;
     border-radius: 2rem;
     padding: 3rem 5rem;
   }
   input {
     background-color: transparent;
     padding: 1rem;
-    border: 0.1rem solid #4e0eff;
+    border: 0.1rem solid #da107b;
     border-radius: 0.4rem;
     color: white;
     width: 100%;
@@ -127,7 +125,7 @@ const FormContainer = styled.div`
     }
   }
   button {
-    background-color: #4e0eff;
+    background-color: #da107b;
     color: white;
     padding: 1rem 2rem;
     border: none;
@@ -137,14 +135,14 @@ const FormContainer = styled.div`
     font-size: 1rem;
     text-transform: uppercase;
     &:hover {
-      background-color: #3d12b3;
+      background-color: #cd006d;
     }
   }
   span {
     color: white;
     text-transform: uppercase;
     a {
-      color: #4e0eff;
+      color: #da107b;
       text-decoration: none;
       font-weight: bold;
     }

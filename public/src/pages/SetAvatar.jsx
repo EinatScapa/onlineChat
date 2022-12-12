@@ -119,7 +119,7 @@ const Container = styled.div`
   align-items: center;
   flex-direction: column;
   gap: 3rem;
-  background-color: #131324;
+  background-color: #252a34;
   height: 100vh;
   width: 100vw;
 
@@ -147,14 +147,15 @@ const Container = styled.div`
       img {
         height: 6rem;
         transition: 0.5s ease-in-out;
+        filter: grayscale(100%);
       }
     }
     .selected {
-      border: 0.4rem solid #4e0eff;
+      border: 0.4rem solid #da107b;
     }
   }
   .submit-btn {
-    background-color: #4e0eff;
+    background-color: #da107b;
     color: white;
     padding: 1rem 2rem;
     border: none;
@@ -164,7 +165,7 @@ const Container = styled.div`
     font-size: 1rem;
     text-transform: uppercase;
     &:hover {
-      background-color: #4e0eff;
+      background-color: #cd006d;
     }
   }
 `;
