@@ -125,6 +125,7 @@ const Container = styled.div`
 
   .loader {
     max-inline-size: 100%;
+    max-height: 10%;
   }
 
   .title-container {
