@@ -5,6 +5,7 @@ import Logout from './Logout';
 import axios from "axios";
 import { getAllMessagesRoute, sendMessageRoute } from '../utils/APIRoutes'
 import { v4 as uuidv4} from "uuid";
+import { BiCheckDouble } from "react-icons/bi";
 
 export default function ChatContainer({ currentChat, currentUser, socket }) {
   const [messages, setMessages] = useState([]);
