@@ -2,8 +2,6 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { RiLogoutCircleRLine } from "react-icons/ri";
 import styled from "styled-components";
-import axios from "axios";
-import {ReactTooltip} from "react-tooltip";
 
 export default function Logout() {
   const navigate = useNavigate();
@@ -15,12 +13,10 @@ export default function Logout() {
 
   return (
     <>
-    <Button onClick={handleClick} data-tip data-for="logoutTooltip">
+    <Button onClick={handleClick}>
       <RiLogoutCircleRLine />
     </Button>
-    <ReactTooltip id="logoutTooltip" place="top" effect="solid">
-      LOGOUT
-    </ReactTooltip>
+
     </>
   );
 }
