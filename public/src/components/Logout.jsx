@@ -1,8 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { BiPowerOff } from "react-icons/bi";
+import { RiLogoutCircleRLine } from "react-icons/ri";
 import styled from "styled-components";
 import axios from "axios";
+import { Tooltip } from 'react-tooltip'
 export default function Logout() {
   const navigate = useNavigate();
   const handleClick =  () => {
@@ -12,8 +13,8 @@ export default function Logout() {
   };
 
   return (
-    <Button onClick={handleClick}>
-      <BiPowerOff />
+    <Button onClick={handleClick} id="tooltipBtn" data-tooltip-content="hello world">
+      <RiLogoutCircleRLine />
     </Button>
   );
 }

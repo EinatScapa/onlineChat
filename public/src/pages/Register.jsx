@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { Link, useNavigate } from "react-router-dom";
-import Logo from "../assets/logo.svg";
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios"
@@ -76,10 +75,6 @@ const Register = () => {
     <>
       <FormContainer>
         <form onSubmit={(e) => handleSubmit(e)}>
-          {/* <div className="brand">
-            <img src={Logo} alt="Logo" />
-            <h1>RChat</h1>
-          </div> */}
           <input type="text" placeholder='Username' name='username' onChange={(e) => handleChange(e)} />
           <input type="email" placeholder='Email' name='email' onChange={(e) => handleChange(e)} />
           <input type="password" placeholder='Password' name='password' onChange={(e) => handleChange(e)} />
@@ -132,7 +127,7 @@ const FormContainer = styled.div`
     width: 100%;
     font-size: 1rem;
     &:focus {
-      border: 0.1rem solid #997af0;
+      border: 0.1rem solid white;
       outline: none;
     }
   }

@@ -66,10 +66,6 @@ const Login = () => {
     <>
       <FormContainer>
         <form onSubmit={(e) => handleSubmit(e)}>
-          {/* <div className="brand">
-            <img src={Logo} alt="Logo" />
-            <h1>RChat</h1>
-          </div> */}
           <input type="text" placeholder='Username' name='username' onChange={(e) => handleChange(e)} min="3"/>
           <input type="password" placeholder='Password' name='password' onChange={(e) => handleChange(e)} />
           <button type='submit' >Login</button>
@@ -120,7 +116,7 @@ const FormContainer = styled.div`
     width: 100%;
     font-size: 1rem;
     &:focus {
-      border: 0.1rem solid #997af0;
+      border: 0.1rem solid white;
       outline: none;
     }
   }
