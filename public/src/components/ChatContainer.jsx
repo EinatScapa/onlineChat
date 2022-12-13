@@ -174,7 +174,7 @@ const Container = styled.div`
     .sended {
       justify-content: flex-end;
       .content {
-        background: none;
+        background-color: ${COLORS.darkBlue};
       }
     }
     .recieved {
