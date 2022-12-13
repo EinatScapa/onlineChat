@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { COLORS } from '../utils/colors';
 import styled from 'styled-components'
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify"
@@ -97,7 +98,7 @@ const FormContainer = styled.div`
   justify-content: center;
   gap: 1rem;
   align-items: center;
-  background-color: #252a34;
+  background-color: ${COLORS.darkGrey};
   .brand {
     display: flex;
     align-items: center;
@@ -121,7 +122,7 @@ const FormContainer = styled.div`
   input {
     background-color: transparent;
     padding: 1rem;
-    border: 0.1rem solid #da107b;
+    border: 0.1rem solid ${COLORS.pink};
     border-radius: 0.4rem;
     color: white;
     width: 100%;
@@ -132,7 +133,7 @@ const FormContainer = styled.div`
     }
   }
   button {
-    background-color: #da107b;
+    background-color: ${COLORS.pink};
     color: white;
     padding: 1rem 2rem;
     border: none;
@@ -142,14 +143,14 @@ const FormContainer = styled.div`
     font-size: 1rem;
     text-transform: uppercase;
     &:hover {
-      background-color: #cd006d;
+      background-color: ${COLORS.pinkHover};
     }
   }
   span {
     color: white;
     text-transform: uppercase;
     a {
-      color: #da107b;
+      color: ${COLORS.pink};
       text-decoration: none;
       font-weight: bold;
     }

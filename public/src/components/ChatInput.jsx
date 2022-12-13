@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import { COLORS } from '../utils/colors';
 import styled from 'styled-components'
 import {IoMdSend} from 'react-icons/io'
 
@@ -54,13 +55,13 @@ padding-bottom: 0.3rem;
         width: 90%;
         padding: 0.9rem;
         border-radius: 2rem;
-        background-color: #080420;
+        background-color:${COLORS.darkBlue};
         color: white;
         border: none;
         padding-left: 1rem;
         font-size: 1.2rem;
         &::selection{
-            background-color: #252a34;
+            background-color: ${COLORS.darkGrey};
         }
         &:focus{
             outline: none;
@@ -72,7 +73,7 @@ padding-bottom: 0.3rem;
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #da107b;
+        background-color: ${COLORS.pink};
         border: none;
         cursor: pointer;
         @media screen and (min-width: 720px) and (max-width: 1080px){

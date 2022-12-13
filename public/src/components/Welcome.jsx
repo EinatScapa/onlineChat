@@ -1,16 +1,17 @@
 import React from 'react'
+import { COLORS } from '../utils/colors';
 import styled from 'styled-components'
-// import Robot from "../assets/robot.gif"
 
 export default function Welcome({currentUser}) {
   return (
+    <>
     <Container>
-        {/* <img src={Robot} alt="welcome" /> */}
         <h1>
             Welcome, <span>{currentUser.username}!</span>
         </h1>
         <h3>Please select a chat to start Messaging.</h3>
     </Container>
+    </>
   )
 }
 
@@ -21,7 +22,7 @@ align-items: center;
 flex-direction: column;
 color: white;
 span{
-    color: #da107b;
+    color: ${COLORS.pink};
     text-transform: capitalize;
 }
 `;

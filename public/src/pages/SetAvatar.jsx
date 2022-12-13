@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { COLORS } from "../utils/colors";
 import styled from "styled-components";
 import axios from "axios";
 import { Buffer } from "buffer";
@@ -7,6 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import { setAvatarRoute } from "../utils/APIRoutes";
+import { IoMdAdd } from "react-icons/io";
 export default function SetAvatar() {
   const api = `https://api.multiavatar.com/45678943`;
   const navigate = useNavigate();
@@ -119,7 +121,7 @@ const Container = styled.div`
   align-items: center;
   flex-direction: column;
   gap: 3rem;
-  background-color: #252a34;
+  background-color: ${COLORS.darkGrey};
   height: 100vh;
   width: 100vw;
 
@@ -152,11 +154,11 @@ const Container = styled.div`
       }
     }
     .selected {
-      border: 0.4rem solid #da107b;
+      border: 0.4rem solid ${COLORS.pink};
     }
   }
   .submit-btn {
-    background-color: #da107b;
+    background-color: ${COLORS.pink};
     color: white;
     padding: 1rem 2rem;
     border: none;
@@ -166,7 +168,7 @@ const Container = styled.div`
     font-size: 1rem;
     text-transform: uppercase;
     &:hover {
-      background-color: #cd006d;
+      background-color: ${COLORS.pinkHover};
     }
   }
 `;

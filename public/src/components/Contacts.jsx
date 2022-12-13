@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react'
+import { useNavigate } from "react-router-dom";
+import Tooltip from '@mui/material/Tooltip';
+import { COLORS } from '../utils/colors';
 import styled from "styled-components"
 
 export default function Contacts({ contacts, currentUser, changeChat }) {
+    const navigate = useNavigate();
     const [currentUserName, setCurrentUserName] = useState(undefined);
     const [currentUserImage, setCurrentUserImage] = useState(undefined);
     const [currentSelected, setCurrentSelected] = useState(undefined);
@@ -45,12 +49,14 @@ export default function Contacts({ contacts, currentUser, changeChat }) {
                             }
                         </div>
                         <div className="current-user">
-                        <div className="avatar">
-                                                <img src={`data:image/svg+xml;base64,${currentUserImage}`} alt="avatar" />
-                                            </div>
-                                            <div className="username">
-                                                <h2>{currentUserName}</h2>
-                                            </div>
+                            <Tooltip title="Change Avatar">
+                              <div className="avatar" onClick={()=>{navigate('/setAvatar')}}>
+                                  <img src={`data:image/svg+xml;base64,${currentUserImage}`} alt="avatar" />
+                              </div>
+                            </Tooltip>  
+                            <div className="username">
+                                <h2>{currentUserName}</h2>
+                            </div>
                         </div>
                     </Container>
                 )
@@ -118,16 +124,17 @@ const Container = styled.div`
       }
     }
     .selected {
-      background-color: #080420;
+      background-color: ${COLORS.darkBlue};
     }
   }
   .current-user {
-    border: 1px solid #da107b;
+    border: 1px solid ${COLORS.pink};
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2rem;
     .avatar {
+      cursor: pointer;
       img {
         height: 4rem;
         max-inline-size: 100%;

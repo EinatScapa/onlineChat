@@ -1,4 +1,5 @@
 import React, { useState, useEffect , useRef} from 'react'
+import { COLORS } from '../utils/colors'
 import styled from "styled-components"
 import ChatInput from './ChatInput';
 import Logout from './Logout';
@@ -173,14 +174,14 @@ const Container = styled.div`
     .sended {
       justify-content: flex-end;
       .content {
-        background-color: #080420;
+        background-color: ${COLORS.darkBlue};
       }
     }
     .recieved {
       justify-content: flex-start;
       .content {
         background-color: #eaeaea;
-        color: #080420;
+        color: ${COLORS.darkBlue};
       }
     }
   }
