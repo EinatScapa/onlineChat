@@ -49,12 +49,8 @@ io.on("connection",(socket)=>{
         }
     });
 
-    socket.on("disconnect", () => {
-        console.log("disconnect");
-    });
-
     socket.on("isConnected",(id)=>{
-        const userSocketId = onlineUsers.get(id) ;
-        socket.emit("getStatus", userSocketId !== undefined ? true : false);
+        const userSocketId = onlineUsers.has(id) ;
+        socket.emit("getStatus", userSocketId);
     });
 });

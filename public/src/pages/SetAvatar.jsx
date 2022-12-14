@@ -7,7 +7,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import { setAvatarRoute } from "../utils/APIRoutes";
-import { IoMdAdd } from "react-icons/io";
 export default function SetAvatar() {
   const api = `https://randomuser.me/api/`;
   const navigate = useNavigate();

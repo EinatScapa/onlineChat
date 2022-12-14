@@ -16,7 +16,7 @@ export default function ChatContainer({ currentChat, currentUser, socket }) {
 
   useEffect(() => {
       if(currentChat){
-        socket.current.emit("isConnected", (currentChat._id))
+        socket.current.emit("isConnected", currentChat._id)
       }
   }, [currentChat]);
 
@@ -161,7 +161,7 @@ const Container = styled.div`
       }
       .status {
         h3 {
-            color: ${COLORS.darkBlue};
+            color: ${COLORS.pink};
         }
       }
     }
