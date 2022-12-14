@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { COLORS } from "../utils/colors";
 import { useState, useEffect , useRef} from 'react'
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -79,7 +80,7 @@ const Container = styled.div`
   justify-content: center;
   gap: 1rem;
   align-items: center;
-  background-color: #252a34;
+  background-color: ${COLORS.darkGrey};
   .container {
     height: 85vh;
     width: 85vw;

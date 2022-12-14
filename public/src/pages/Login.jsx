@@ -88,19 +88,6 @@ const FormContainer = styled.div`
   gap: 1rem;
   align-items: center;
   background-color: ${COLORS.darkGrey};
-  .brand {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    justify-content: center;
-    img {
-      height: 5rem;
-    }
-    h1 {
-      color: white;
-      text-transform: capitalize;
-    }
-  }
   form {
     display: flex;
     flex-direction: column;

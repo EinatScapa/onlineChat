@@ -38,7 +38,7 @@ export default function Contacts({ contacts, currentUser, changeChat }) {
                                              key={contact._id}
                                               onClick={()=>changeCurrentChat(index,contact)}>
                                             <div className="avatar">
-                                                <img src={`data:image/svg+xml;base64,${contact.avatarImage}`} alt="avatar" />
+                                                <img src={contact.avatarImage} alt="avatar" />
                                             </div>
                                             <div className="username">
                                                 <h3>{contact.username}</h3>
@@ -51,7 +51,7 @@ export default function Contacts({ contacts, currentUser, changeChat }) {
                         <div className="current-user">
                             <Tooltip title="Change Avatar">
                               <div className="avatar" onClick={()=>{navigate('/setAvatar')}}>
-                                  <img src={`data:image/svg+xml;base64,${currentUserImage}`} alt="avatar" />
+                                  <img src={currentUserImage} alt="avatar" />
                               </div>
                             </Tooltip>  
                             <div className="username">
@@ -72,21 +72,7 @@ const Container = styled.div`
   gap: 6%;
   overflow: hidden;
   border-radius: 0.2rem;
-  .brand {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    justify-content: center;
-    img {
-      height: 2rem;
-    }
-    h3 {
-      color: white;
-      text-transform: uppercase;
-    }
-  }
   .contacts {
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -113,6 +99,7 @@ const Container = styled.div`
       .avatar {
         img {
           height: 3rem;
+          border-radius: 50px;
           filter: grayscale(100%);
         }
       }
@@ -138,6 +125,7 @@ const Container = styled.div`
       img {
         height: 4rem;
         max-inline-size: 100%;
+        border-radius: 50px;
         filter: grayscale(100%);
       }
     }

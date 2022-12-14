@@ -11,10 +11,25 @@ import { BiCheckDouble } from "react-icons/bi";
 export default function ChatContainer({ currentChat, currentUser, socket }) {
   const [messages, setMessages] = useState([]);
   const [arrivalMessage, setArrivalMessage] = useState(null);
+  const [status, setStatus] = useState(null)
   const scrollRef = useRef();
 
   useEffect(() => {
+      if(currentChat){
+        socket.current.emit("isConnected", (currentChat._id))
+      }
+  }, [currentChat]);
 
+  useEffect(() => {
+    if (socket.current) {
+      socket.current.on("getStatus", (statusChecked) => {
+        setStatus(statusChecked);
+        console.log(status);
+      })
+    }
+  }, [currentChat]);
+  
+  useEffect(() => {
     const fetchData = async () => {
       if(currentChat){
         const response = await axios.post(getAllMessagesRoute, {
@@ -75,11 +90,14 @@ export default function ChatContainer({ currentChat, currentUser, socket }) {
               <div className="user-details">
                 <div className="avatar">
                   <img
-                    src={`data:image/svg+xml;base64,${currentChat.avatarImage}`}
+                    src={currentChat.avatarImage}
                     alt="avatar" />
                 </div>
                 <div className="username">
                   <h3>{currentChat.username}</h3>
+                </div>
+                <div className="status">
+                  <h3>{status ? "Online" : "Offline"}</h3>
                 </div>
               </div>
               <Logout />
@@ -131,6 +149,7 @@ const Container = styled.div`
       .avatar {
         img {
           height: 3rem;
+          border-radius: 50px;
           filter: grayscale(100%);
         }
       }

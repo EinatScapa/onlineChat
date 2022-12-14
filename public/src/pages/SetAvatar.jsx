@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 import { setAvatarRoute } from "../utils/APIRoutes";
 import { IoMdAdd } from "react-icons/io";
 export default function SetAvatar() {
-  const api = `https://api.multiavatar.com/45678943`;
+  const api = `https://randomuser.me/api/`;
   const navigate = useNavigate();
   const [avatars, setAvatars] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -62,11 +62,12 @@ export default function SetAvatar() {
       const data = [];
       // foreach doesn't work with APIs
       for (let i = 0; i < 4; i++) {
-        const image = await axios.get(
-          `${api}/${Math.round(Math.random() * 1000)}`
-        );
-        const buffer = new Buffer(image.data);
-        data.push(buffer.toString("base64"));
+        const image = await axios.get(api, {
+          dataType: 'json'
+        });
+        // const buffer = new Buffer(image.data);
+        data.push(image.data.results[0].picture.medium);
+        console.log(data);
       }
 
       setAvatars(data);
@@ -96,7 +97,7 @@ export default function SetAvatar() {
                   }`}
                 >
                   <img
-                    src={`data:image/svg+xml;base64,${avatar}`}
+                    src={avatar}
                     alt="avatar"
                     key={avatar}
                     onClick={() => setSelectedAvatar(index)}
@@ -150,6 +151,7 @@ const Container = styled.div`
       img {
         height: 6rem;
         transition: 0.5s ease-in-out;
+        border-radius: 50px;
         filter: grayscale(100%);
       }
     }
