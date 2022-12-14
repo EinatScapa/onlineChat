@@ -159,6 +159,11 @@ const Container = styled.div`
           text-transform: capitalize;
         }
       }
+      .status {
+        h3 {
+            color: ${COLORS.darkBlue};
+        }
+      }
     }
   }
   .chat-messages {

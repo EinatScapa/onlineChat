@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { COLORS } from "../utils/colors";
 import styled from "styled-components";
 import axios from "axios";
-import { Buffer } from "buffer";
 import loader from "../assets/loader.gif";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -60,12 +59,10 @@ export default function SetAvatar() {
   useEffect(() => {
     const fetchData = async () => {
       const data = [];
-      // foreach doesn't work with APIs
       for (let i = 0; i < 4; i++) {
         const image = await axios.get(api, {
           dataType: 'json'
         });
-        // const buffer = new Buffer(image.data);
         data.push(image.data.results[0].picture.medium);
         console.log(data);
       }
